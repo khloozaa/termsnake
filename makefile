@@ -1,23 +1,14 @@
-CXX      ?= g++
-CXXFLAGS ?= -std=c++17 -O2 -Wall -Wextra -Wpedantic
-TARGET   = termsnake
-SRC      = src/main.cpp
-PREFIX  ?= $(HOME)/.local
+PREFIX ?= $(HOME)/.local
 
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+run:
+	bash termsnake.sh
 
-run: $(TARGET)
-	./$(TARGET)
-
-install: $(TARGET)
+install:
 	mkdir -p $(PREFIX)/bin
-	cp $(TARGET) $(PREFIX)/bin/
+	cp termsnake.sh $(PREFIX)/bin/termsnake
+	chmod +x $(PREFIX)/bin/termsnake
 
 uninstall:
-	rm -f $(PREFIX)/bin/$(TARGET)
+	rm -f $(PREFIX)/bin/termsnake
 
-clean:
-	rm -f $(TARGET)
-
-.PHONY: run install uninstall clean
+.PHONY: run install uninstall
