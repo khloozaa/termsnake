@@ -11,9 +11,9 @@ Snake for your terminal, written in pure Bash. Colored blocks, smooth controls, 
 ## Quick start
 
 ```bash
-git clone https://github.com/YOURNAME/termsnake.git
+git clone https://github.com/khloozaa/termsnake.git
 cd termsnake
-bash termsnake.sh
+bash src/main.sh
 ```
 
 **You need:**
